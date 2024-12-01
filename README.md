@@ -1,8 +1,9 @@
 - 👋 Hi, I’m @Kang Liu
 - 👀 I’m interested in Radiology Report Generation and Anomaly Detection
 - 💞️ I’m looking to collaborate on Radiology Report Generation
-- 📫 WeChat: kangliu422
 - 🌱 Email: kangliu422@gmail.com
+- 📫 WeChat: kangliu422
+<div align=center><img src="results/fig1.jpg"></div>
 
 <!---
 Liuykang/Liuykang is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
