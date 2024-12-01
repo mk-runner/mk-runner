@@ -3,7 +3,7 @@
 - 💞️ I’m looking to collaborate on Radiology Report Generation
 - 🌱 Email: kangliu422@gmail.com
 - 📫 WeChat: kangliu422
-<div align=center><img src="results/fig1.jpg"></div>
+<div align=center><img src="wechat.png"></div>
 
 <!---
 Liuykang/Liuykang is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
