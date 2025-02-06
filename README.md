@@ -2,7 +2,6 @@
 - 👀 I’m interested in **Radiology Report Generation** and **Anomaly Detection**
 - 💞️ I’m looking to collaborate on Radiology Report Generation
 - 🌱 **Email**: kangliu422@gmail.com
-- 📫 **WeChat**: kangliu422
 
 
 <!---
