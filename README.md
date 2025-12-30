@@ -1,3 +1,6 @@
+![GitHub Stats](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mk-runner/mk-runner/main/stats.json)
+
+
 - 👋 Hi, I’m Kang Liu, a PhD candidate at Xidian University
 - 👀 I’m interested in **Radiology Report Generation** and **Anomaly Detection**
 - 💞️ I’m looking to collaborate on Radiology Report Generation
