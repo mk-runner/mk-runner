@@ -1,13 +1,33 @@
-![GitHub Stats](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mk-runner/mk-runner/main/stats.json)
+<p align="center">
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mk-runner/mk-runner/main/badges/stars.json" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mk-runner/mk-runner/main/badges/forks.json" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mk-runner/mk-runner/main/badges/commits.json" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mk-runner/mk-runner/main/badges/downloads.json" />
+</p>
 
+<h2 align="center">Hi 👋, I'm Kang Liu</h2>
 
-- 👋 Hi, I’m Kang Liu, a PhD candidate at Xidian University
-- 👀 I’m interested in **Radiology Report Generation** and **Anomaly Detection**
-- 💞️ I’m looking to collaborate on Radiology Report Generation
-- 🌱 **Email**: kangliu422@gmail.com
+<p align="center">
+🎓 PhD Candidate at <b>Xidian University</b><br>
+🧠 Researching <b>Radiology Report Generation</b> & <b>Anomaly Detection</b>
+</p>
 
+---
 
-<!---
-Liuykang/Liuykang is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+### 🔬 Research Interests
+- 🩻 Radiology Report Generation  
+- 🚨 Anomaly Detection  
+- 🤖 Medical Vision–Language Models  
+
+---
+
+### 🤝 Collaboration
+Open to collaborations on:
+- Medical Image Analysis
+- Radiology Report Generation
+- Vision–Language Models in Healthcare
+
+---
+
+### 📫 Contact
+- ✉️ **Email**: [kangliu422@gmail.com](mailto:kangliu422@gmail.com)
