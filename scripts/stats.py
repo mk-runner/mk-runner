@@ -11,7 +11,16 @@ HEADERS = {
     "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}"
 }
 
-def get_repos():
+BADGE_DIR = "badges"
+os.makedirs(BADGE_DIR, exist_ok=True)
+COLORS = {
+    "stars": "#2f80ed",      # academic blue
+    "forks": "#6f42c1",      # deep purple
+    "commits": "#0f766e",    # deep teal
+    "downloads": "#475569"  # neutral gray
+}
+
+def get_all_repos():
     repos = []
     page = 1
     while True:
@@ -28,8 +37,11 @@ def get_repos():
         page += 1
     return repos
 
-def get_commit_count(repo):
-    url = f"{GITHUB_API}/repos/{USERNAME}/{repo}/commits"
+def get_commit_count(repo_name):
+    """
+    Count commits on default branch using GitHub pagination header.
+    """
+    url = f"{GITHUB_API}/repos/{USERNAME}/{repo_name}/commits"
     r = requests.get(url, headers=HEADERS, params={"per_page": 1})
     r.raise_for_status()
 
@@ -40,8 +52,21 @@ def get_commit_count(repo):
     match = re.search(r'page=(\d+)>; rel="last"', link)
     return int(match.group(1)) if match else 0
 
+def write_badge(name, label, value, color):
+    badge = {
+        "schemaVersion": 1,
+        "label": label,
+        "message": str(value),
+        "color": color
+    }
+    path = os.path.join(BADGE_DIR, f"{name}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(badge, f, ensure_ascii=False)
+
 def main():
-    repos = get_repos()
+    os.makedirs(BADGE_DIR, exist_ok=True)
+
+    repos = get_all_repos()
 
     total_stars = 0
     total_forks = 0
@@ -54,7 +79,7 @@ def main():
         total_stars += repo.get("stargazers_count", 0)
         total_forks += repo.get("forks_count", 0)
 
-        # commits (default branch)
+        # commits (default branch only)
         total_commits += get_commit_count(name)
 
         # release downloads
@@ -66,20 +91,11 @@ def main():
                     for asset in r.get("assets", []):
                         total_downloads += asset.get("download_count", 0)
 
-    badge = {
-        "schemaVersion": 1,
-        "label": "GitHub Total",
-        "message": (
-            f"⭐ {total_stars}  "
-            f"🍴 {total_forks}  "
-            f"🧮 {total_commits}  "
-            f"⬇️ {total_downloads}"
-        ),
-        "color": "blue"
-    }
-
-    with open("stats.json", "w", encoding="utf-8") as f:
-        json.dump(badge, f, ensure_ascii=False)
+    # write badges
+    write_badge("stars", "Stars", total_stars, COLORS["stars"])
+    write_badge("forks", "Forks", total_forks, COLORS["forks"])
+    write_badge("commits", "Commits", total_commits, COLORS["commits"])
+    write_badge("downloads", "Downloads", total_downloads, COLORS["downloads"])
 
 if __name__ == "__main__":
     main()
