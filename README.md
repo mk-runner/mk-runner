@@ -14,10 +14,5 @@
 
 ---
 
-### 🤝 Collaboration
-Open to collaboration on medical image analysis and healthcare VLMs
-
----
-
-### 📫 Contact
-✉️ [kangliu422@gmail.com](mailto:kangliu422@gmail.com)
+### Collaboration & Contact
+🤝 Open to collaboration on medical image analysis and healthcare VLMs · ✉️ [kangliu422@gmail.com](mailto:kangliu422@gmail.com)
