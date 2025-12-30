@@ -9,25 +9,15 @@
 
 <p align="center">
 🎓 PhD Candidate at <b>Xidian University</b><br>
-🧠 Researching <b>Radiology Report Generation</b> & <b>Anomaly Detection</b>
+🧠 Researching 🩻 <b>Radiology Report Generation</b> · 🤖 <b>Medical Vision–Language Models</b> · 🚨 <b>Anomaly Detection</b>
 </p>
 
 ---
 
-### 🔬 Research Interests
-- 🩻 Radiology Report Generation  
-- 🚨 Anomaly Detection  
-- 🤖 Medical Vision–Language Models  
-
----
-
 ### 🤝 Collaboration
-Open to collaborations on:
-- Medical Image Analysis
-- Radiology Report Generation
-- Vision–Language Models in Healthcare
+Open to collaboration on medical image analysis and healthcare VLMs
 
 ---
 
 ### 📫 Contact
-- ✉️ **Email**: [kangliu422@gmail.com](mailto:kangliu422@gmail.com)
+✉️ [kangliu422@gmail.com](mailto:kangliu422@gmail.com)
