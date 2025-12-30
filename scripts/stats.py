@@ -1,11 +1,14 @@
 import requests
 import json
+import os
 import re
 
 USERNAME = "mk-runner"
 GITHUB_API = "https://api.github.com"
+
 HEADERS = {
-    "Accept": "application/vnd.github+json"
+    "Accept": "application/vnd.github+json",
+    "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}"
 }
 
 def get_repos():
@@ -17,6 +20,7 @@ def get_repos():
             headers=HEADERS,
             params={"per_page": 100, "page": page}
         )
+        r.raise_for_status()
         data = r.json()
         if not data:
             break
@@ -27,10 +31,13 @@ def get_repos():
 def get_commit_count(repo):
     url = f"{GITHUB_API}/repos/{USERNAME}/{repo}/commits"
     r = requests.get(url, headers=HEADERS, params={"per_page": 1})
-    if "Link" not in r.headers:
+    r.raise_for_status()
+
+    link = r.headers.get("Link")
+    if not link:
         return len(r.json()) if isinstance(r.json(), list) else 0
 
-    match = re.search(r'page=(\d+)>; rel="last"', r.headers["Link"])
+    match = re.search(r'page=(\d+)>; rel="last"', link)
     return int(match.group(1)) if match else 0
 
 def main():
@@ -47,10 +54,10 @@ def main():
         total_stars += repo.get("stargazers_count", 0)
         total_forks += repo.get("forks_count", 0)
 
-        # commits
+        # commits (default branch)
         total_commits += get_commit_count(name)
 
-        # downloads (release assets)
+        # release downloads
         releases_url = repo.get("releases_url", "").replace("{/id}", "")
         if releases_url:
             releases = requests.get(releases_url, headers=HEADERS).json()
@@ -61,7 +68,7 @@ def main():
 
     badge = {
         "schemaVersion": 1,
-        "label": "GitHub Stats",
+        "label": "GitHub Total",
         "message": (
             f"⭐ {total_stars}  "
             f"🍴 {total_forks}  "
